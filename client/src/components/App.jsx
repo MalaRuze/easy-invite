@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react";
 import Axios from "axios";
 
 function App() {
@@ -11,16 +10,9 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/getTemplates")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setListOfTemplates(data);
-  //     });
-  // }, []);
-
   return (
     <div>
+      <h1 className="text-2xl">Hello World</h1>
       {listOfTemplates.map((template, index) => {
         return (
           <div key={index}>
