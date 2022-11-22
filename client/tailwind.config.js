@@ -16,6 +16,9 @@ module.exports = {
       height: {
         screen75: "75vh",
       },
+      maxWidth: {
+        custom: "65%",
+      },
     },
   },
   plugins: [],

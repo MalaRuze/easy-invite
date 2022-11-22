@@ -1,4 +1,5 @@
 import React from "react";
+import MessagesIntro from "./MessagesIntro";
 
 function WelcomeScreen() {
   return (
@@ -9,7 +10,7 @@ function WelcomeScreen() {
           <span className="text-easyPurple">easy</span>
         </h1>
       </div>
-      <div className="pr-1  bg-gray-500 md:my-auto  md:pl-6 lg:pl-20">High</div>
+      <MessagesIntro />
     </div>
   );
 }
