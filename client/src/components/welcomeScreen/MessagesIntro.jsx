@@ -27,8 +27,8 @@ function MessagesIntro() {
   }, []);
 
   return (
-    <div className="flex flex-col pr-1 h-0 md:h-96 md:my-auto  md:pl-6 lg:pl-20">
-      <div className="text-2xl lg:text-3xl bg-easyPurple w-max max-w-custom px-6 py-4 rounded-3xl mb-5 ml-auto">
+    <div className="flex flex-col pr-1 h-96 md:h-96 mt-16 md:my-auto">
+      <div className="text-base xs:text-xl md:text-2xl lg:text-3xl bg-easyPurple w-max max-w-custom px-6 py-4 rounded-3xl mb-5 ml-auto">
         Wanna go to my party?
       </div>
       {messages.map((message) => (
