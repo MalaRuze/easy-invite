@@ -1,0 +1,87 @@
+import React, { useState } from "react";
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from "react-places-autocomplete";
+import { Input, Switch } from "antd";
+
+function LocationInput() {
+  const [adress, setAdress] = useState("");
+  const [adressLink, setAdressLink] = useState("");
+  const [includeLink, setIncludeLink] = useState(true);
+
+  const handleSelect = async (value) => {
+    const results = await geocodeByAddress(value);
+    const latLng = await getLatLng(results[0]);
+    const placeId = results[0].place_id;
+    const googleMapLink =
+      "https://www.google.com/maps/search/?api=1&query=" +
+      latLng.lat +
+      "%2C" +
+      latLng.lng +
+      "&query_place_id=" +
+      placeId;
+    setAdressLink(googleMapLink);
+    setAdress(value);
+    console.log(adressLink);
+  };
+
+  function handleClick(selectedAdress) {
+    setAdress(selectedAdress);
+  }
+
+  function handleToggle() {
+    setIncludeLink(!includeLink);
+  }
+
+  return (
+    <div className="pt-2 grid grid-cols-7">
+      <div className="col-span-6 w-11/12">
+        <p className="pb-2">Location</p>
+        <PlacesAutocomplete
+          value={adress}
+          onChange={setAdress}
+          onSelect={handleSelect}
+        >
+          {({
+            getInputProps,
+            suggestions,
+            getSuggestionItemProps,
+            loading,
+          }) => (
+            <div className="relative">
+              <Input
+                {...getInputProps({ placeholder: "Type address" })}
+                value={adress}
+              />
+              <div className="absolute bg-white z-20 w-full px-4 rounded drop-shadow-md">
+                {suggestions.map((suggestion) => {
+                  return (
+                    <div
+                      className="pb-2 pt-1 text-sm hover:text-easyPurple"
+                      {...getSuggestionItemProps(suggestion)}
+                    >
+                      <span onClick={() => handleClick(suggestion.description)}>
+                        {suggestion.description}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </PlacesAutocomplete>
+      </div>
+      <div>
+        <p className="pb-2">Map Link</p>
+        <Switch
+          className="bg-easyGrey align-middle"
+          checked={includeLink}
+          onChange={handleToggle}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default LocationInput;
