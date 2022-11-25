@@ -28,7 +28,7 @@ function App() {
     <div className="max-w-screen-2xl mx-auto px-1 xs:px-8">
       <Navbar />
       <WelcomeScreen />
-      <InviteMaker />
+      <InviteMaker listOfTemplates={listOfTemplates} />
     </div>
   );
 }

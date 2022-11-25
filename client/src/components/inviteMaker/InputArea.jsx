@@ -5,12 +5,18 @@ import LocationInput from "./LocationInput";
 
 const { TextArea } = Input;
 
-function InputArea() {
+function InputArea(props) {
   const [showEndDateTime, setShowEndDateTime] = useState(false);
 
-  function handleEndClick() {
+  function handleEndClick(event) {
     setShowEndDateTime(!showEndDateTime);
     console.log(showEndDateTime);
+    handleChange(event);
+  }
+
+  function handleChange(event) {
+    props.onInputChange(event);
+    console.log(event);
   }
 
   return (
@@ -26,15 +32,33 @@ function InputArea() {
 
         <div>
           <p className="pb-2">Event name</p>
-          <Input placeholder="Birthday Party" />
+          <Input
+            value={props.defaultInput.eventName}
+            name="eventName"
+            onChange={handleChange}
+          />
         </div>
 
-        <DateTimeInput inputName="Start" />
-        {showEndDateTime && <DateTimeInput inputName="End" />}
+        <DateTimeInput
+          inputName="Start"
+          handleChange={handleChange}
+          defaultInput={props.defaultInput}
+          name="start"
+        />
+        {showEndDateTime && (
+          <DateTimeInput
+            inputName="End"
+            handleChange={handleChange}
+            defaultInput={props.defaultInput}
+            name="end"
+          />
+        )}
 
         <button
           className="text-sm text-easyPurple pt-2"
           onClick={handleEndClick}
+          value={showEndDateTime}
+          name="useEndDateTime"
         >
           <span className="text-xl">{showEndDateTime ? "-" : "+"}</span> End
           Date and Time

@@ -2,19 +2,51 @@ import React from "react";
 import { ConfigProvider, DatePicker, TimePicker } from "antd";
 import dayjs from "dayjs";
 
-const hourFormat = "HH:mm";
-const dateFormat = "DD/MM/YYYY";
-
 function DateTimeInput(props) {
+  const hourFormat = "HH:mm";
+  const dateFormat = "DD/MM/YYYY";
+  const defaultDateInput =
+    props.name === "start"
+      ? props.defaultInput.startDate
+      : props.defaultInput.endDate;
+  const defaultTimeInput =
+    props.name === "start"
+      ? props.defaultInput.startTime
+      : props.defaultInput.endTime;
+
+  function handleChange(datetime, datetimeString) {
+    // const name = event.target.getAttribbute("name");
+    // const value = this.state.date;
+    // props.name
+    // const name = dayjs(datetimeString).isValid()
+    //   ? props.name + "Date"
+    //   : props.name + "Time";
+
+    const name =
+      datetimeString.length > 5 ? props.name + "Date" : props.name + "Time";
+    const datetimeData = {
+      target: {
+        name: name,
+        value: datetimeString,
+      },
+    };
+    props.handleChange(datetimeData);
+
+    // console.log(name);
+    // console.log(datetime);
+    // console.log(datetimeString);
+  }
+
   return (
     <div className="grid grid-cols-3 pt-5">
       <div className="col-span-2">
-        <p className="pb-2">{props.inputName} Date</p>
+        <p className="pb-2">{props.inputName} Date </p>
         <DatePicker
           className="w-11/12"
           showToday={false}
-          defaultValue={dayjs("10/02/2023", dateFormat)}
+          value={dayjs(defaultDateInput, dateFormat)}
           format={dateFormat}
+          onChange={handleChange}
         />
       </div>
       <div>
@@ -29,8 +61,9 @@ function DateTimeInput(props) {
           <TimePicker
             className="w-full"
             showNow={false}
-            defaultValue={dayjs("12:00", hourFormat)}
+            defaultValue={dayjs(defaultTimeInput, hourFormat)}
             format={hourFormat}
+            onChange={handleChange}
           />
         </ConfigProvider>
       </div>
