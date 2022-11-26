@@ -8,10 +8,30 @@ const { TextArea } = Input;
 function InputArea(props) {
   const [showEndDateTime, setShowEndDateTime] = useState(false);
 
-  function handleEndClick(event) {
+  function handleEndClick() {
     setShowEndDateTime(!showEndDateTime);
     console.log(showEndDateTime);
-    handleChange(event);
+    const endClickBoolean = [
+      {
+        target: {
+          name: "useEndDateTime",
+          value: showEndDateTime,
+        },
+      },
+    ];
+    handleChange(endClickBoolean);
+  }
+
+  function handleNameChange(event) {
+    const eventName = [
+      {
+        target: {
+          name: event.target.name,
+          value: event.target.value,
+        },
+      },
+    ];
+    handleChange(eventName);
   }
 
   function handleChange(event) {
@@ -35,7 +55,7 @@ function InputArea(props) {
           <Input
             value={props.defaultInput.eventName}
             name="eventName"
-            onChange={handleChange}
+            onChange={handleNameChange}
           />
         </div>
 
@@ -57,14 +77,15 @@ function InputArea(props) {
         <button
           className="text-sm text-easyPurple pt-2"
           onClick={handleEndClick}
-          value={showEndDateTime}
-          name="useEndDateTime"
         >
           <span className="text-xl">{showEndDateTime ? "-" : "+"}</span> End
           Date and Time
         </button>
 
-        <LocationInput />
+        <LocationInput
+          handleChange={handleChange}
+          defaultInput={props.defaultInput}
+        />
         <div>
           <p className="pb-2 pt-5">Event description:</p>
           <TextArea
@@ -73,6 +94,9 @@ function InputArea(props) {
             maxLength={150}
             style={{ height: 100, resize: "none" }}
             placeholder="Type description"
+            value={props.defaultInput.eventDescription}
+            name="eventDescription"
+            onChange={handleNameChange}
           />
         </div>
       </ConfigProvider>

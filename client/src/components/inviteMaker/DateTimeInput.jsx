@@ -24,12 +24,14 @@ function DateTimeInput(props) {
 
     const name =
       datetimeString.length > 5 ? props.name + "Date" : props.name + "Time";
-    const datetimeData = {
-      target: {
-        name: name,
-        value: datetimeString,
+    const datetimeData = [
+      {
+        target: {
+          name: name,
+          value: datetimeString,
+        },
       },
-    };
+    ];
     props.handleChange(datetimeData);
 
     // console.log(name);

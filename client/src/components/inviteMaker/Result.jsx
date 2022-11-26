@@ -66,9 +66,19 @@ function Result(props) {
                     {inputData.startDate}
                     {inputData.startTime}
                   </h1>
-                  <h1>
-                    {inputData.endTime} {inputData.endDate}
-                  </h1>
+                  {!inputData.useEndDateTime ? (
+                    <h1>
+                      {inputData.endTime} {inputData.endDate}
+                    </h1>
+                  ) : (
+                    ""
+                  )}
+                  <h1>{inputData.locationName}</h1>
+                  {inputData.useLocationLink ? (
+                    <p className="break-words">{inputData.locationLink}</p>
+                  ) : (
+                    ""
+                  )}
                 </div>
               );
             })}

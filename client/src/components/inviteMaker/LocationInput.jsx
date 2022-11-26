@@ -5,9 +5,9 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import { Input, Switch } from "antd";
 
-function LocationInput() {
-  const [adress, setAdress] = useState("");
-  const [adressLink, setAdressLink] = useState("");
+function LocationInput(props) {
+  const [adress, setAdress] = useState(props.defaultInput.locationName);
+  const [adressLink, setAdressLink] = useState(props.defaultInput.locationLink);
   const [includeLink, setIncludeLink] = useState(true);
 
   const handleSelect = async (value) => {
@@ -23,15 +23,35 @@ function LocationInput() {
       placeId;
     setAdressLink(googleMapLink);
     setAdress(value);
-    console.log(adressLink);
+    const locationName = {
+      target: {
+        name: "locationName",
+        value: value,
+      },
+    };
+    const locationLink = {
+      target: {
+        name: "locationLink",
+        value: adressLink,
+      },
+    };
+    const finalData = [locationName, locationLink];
+    props.handleChange(finalData);
+    // props.handleChange(locationLink);
+    // props.handleChange(locationName);
   };
-
-  function handleClick(selectedAdress) {
-    setAdress(selectedAdress);
-  }
 
   function handleToggle() {
     setIncludeLink(!includeLink);
+    const useLocationLink = [
+      {
+        target: {
+          name: "useLocationLink",
+          value: includeLink,
+        },
+      },
+    ];
+    props.handleChange(useLocationLink);
   }
 
   return (
@@ -50,10 +70,7 @@ function LocationInput() {
             loading,
           }) => (
             <div className="relative">
-              <Input
-                {...getInputProps({ placeholder: "Type address" })}
-                value={adress}
-              />
+              <Input {...getInputProps({ placeholder: "Type address" })} />
               <div className="absolute bg-white z-20 w-full px-4 rounded drop-shadow-md">
                 {suggestions.map((suggestion) => {
                   return (
@@ -61,7 +78,9 @@ function LocationInput() {
                       className="pb-2 pt-1 text-sm hover:text-easyPurple"
                       {...getSuggestionItemProps(suggestion)}
                     >
-                      <span onClick={() => handleClick(suggestion.description)}>
+                      <span
+                        onClick={() => handleSelect(suggestion.description)}
+                      >
                         {suggestion.description}
                       </span>
                     </div>

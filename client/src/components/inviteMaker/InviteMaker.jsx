@@ -7,17 +7,24 @@ function InviteMaker(props) {
     eventName: "Birthday Party",
     startDate: "10/03/2023",
     startTime: "15:00",
-    useEndDateTime: false,
+    useEndDateTime: true,
     endDate: "11/03/2023",
     endTime: "10:00",
-    locationName: "",
+    locationName:
+      "Berghain | Panorama Bar | Säule, Am Wriezener Bahnhof, Berlín, Německo",
     useLocationLink: true,
-    locationLink: "",
+    locationLink:
+      "https://www.google.com/maps/search/?api=1&query=52.51106910000001%2C13.4429945&query_place_id=ChIJn17Gi0NOqEcRfHX8oRvU9ms",
     eventDescription: "",
   });
 
   function changeInputData(event) {
-    setInputData({ ...inputData, [event.target.name]: event.target.value });
+    const updatedData = {};
+    event.forEach((event) => {
+      updatedData[event.target.name] = event.target.value;
+    });
+    console.log(updatedData);
+    setInputData({ ...inputData, ...updatedData });
     console.log(inputData);
   }
 
