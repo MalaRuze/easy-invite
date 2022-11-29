@@ -1,13 +1,25 @@
 import mongoose from "mongoose";
 
 const TemplateSchema = new mongoose.Schema({
-  heading: {
+  name: {
+    type: String,
+  },
+  headingStart: {
+    type: String,
+  },
+  headingEnd: {
     type: String,
   },
   date: {
     type: String,
   },
   location: {
+    type: String,
+  },
+  locationLink: {
+    type: String,
+  },
+  description: {
     type: String,
   },
 });

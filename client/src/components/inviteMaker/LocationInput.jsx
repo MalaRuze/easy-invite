@@ -47,7 +47,7 @@ function LocationInput(props) {
       {
         target: {
           name: "useLocationLink",
-          value: includeLink,
+          value: !includeLink,
         },
       },
     ];
