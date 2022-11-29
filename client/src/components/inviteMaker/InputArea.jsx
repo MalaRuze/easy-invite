@@ -98,26 +98,23 @@ function InputArea(props) {
             onChange={handleNameChange}
           />
         </div>
-        <button
-          className="flex text-easyPurple mt-6 text-sm hover:opacity-80 duration-200"
-          onClick={props.clearInput}
-        >
+        {/* <button className="flex text-easyPurple mt-6 text-sm hover:opacity-80 duration-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
-            class="w-5 h-5"
+            className="w-5 h-5"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
           Clear Details
-        </button>
+        </button> */}
       </ConfigProvider>
     </div>
   );

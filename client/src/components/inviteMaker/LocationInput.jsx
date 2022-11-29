@@ -8,7 +8,9 @@ import { Input, Switch } from "antd";
 function LocationInput(props) {
   const [adress, setAdress] = useState(props.defaultInput.locationName);
   const [adressLink, setAdressLink] = useState(props.defaultInput.locationLink);
-  const [includeLink, setIncludeLink] = useState(true);
+  const [includeLink, setIncludeLink] = useState(
+    props.defaultInput.locationLink
+  );
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value);
@@ -70,7 +72,11 @@ function LocationInput(props) {
             loading,
           }) => (
             <div className="relative">
-              <Input {...getInputProps({ placeholder: "Type address" })} />
+              <Input
+                {...getInputProps({
+                  placeholder: "Type address",
+                })}
+              />
               <div className="absolute bg-white z-20 w-full px-4 rounded drop-shadow-md">
                 {suggestions.map((suggestion) => {
                   return (
@@ -96,6 +102,7 @@ function LocationInput(props) {
         <Switch
           className="bg-easyGrey align-middle"
           checked={includeLink}
+          defaultChecked={true}
           onChange={handleToggle}
         />
       </div>

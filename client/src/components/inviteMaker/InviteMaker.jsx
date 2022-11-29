@@ -28,28 +28,9 @@ function InviteMaker(props) {
     console.log(inputData);
   }
 
-  function clearInputData() {
-    setInputData({
-      eventName: "Your event",
-      startDate: "01/01/2023",
-      startTime: "12:00",
-      useEndDateTime: false,
-      endDate: "01/01/2023",
-      endTime: "16:00",
-      locationName: "",
-      useLocationLink: false,
-      locationLink: "",
-      eventDescription: "",
-    });
-  }
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 py-40">
-      <InputArea
-        onInputChange={changeInputData}
-        defaultInput={inputData}
-        clearInput={clearInputData}
-      />
+      <InputArea onInputChange={changeInputData} defaultInput={inputData} />
       <Result listOfTemplates={props.listOfTemplates} inputData={inputData} />
     </div>
   );
