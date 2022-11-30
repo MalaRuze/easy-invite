@@ -89,23 +89,27 @@ function About() {
   );
 
   return (
-    <div className="grid grid-cols-1 pt-20 border-t-2 md:grid-cols-2">
+    <div
+      className="grid grid-cols-1 pt-20 border-t-2 md:grid-cols-2"
+      id="about"
+    >
       <div>
-        <h2 className="text-3xl  md:text-4xl  font-normal pb-6 pt-2 font-medium  col-span-2">
+        <h2 className="text-2xl  md:text-3xl  font-normal pb-6 pt-2   col-span-2">
           About <span className="text-easyPurple">easy</span>invite
         </h2>
         <img
           src={require("./myPicture.jpg")}
           alt="my_photo"
-          className="md:hidden sm:w-6/12 w-8/12 rounded-xl mx-auto mb-10"
+          className="md:hidden sm:w-6/12 w-8/12 rounded-xl mx-auto mb-14"
         ></img>
         <div className="flex flex-col justify-around h-2/6 md:h-4/6 md:justify-between">
           <p className="pb-8">
-            Hi, I'm Vojta, the creator of easyinvite. Easyinvite is a simple
-            intuitive tool to help you create beautiful invite messages in
-            seconds. I created this project mainly to improve my web
-            developement skills. There are still ways to improve and optimize
-            the website, thus it's still under active developement. <br />
+            Hi, I'm Vojta, the creator of easyinvite. Easyinvite is a simple,
+            intuitive tool to help you make beautiful invite messages in
+            seconds. I created this website as a fun project to improve my web
+            development skills. There are still ways to improve and optimize the
+            website. Thus, it's still under active development.
+            <br />
             <br />
             The following technologies were used:
           </p>

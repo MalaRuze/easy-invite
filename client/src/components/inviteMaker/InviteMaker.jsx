@@ -15,7 +15,7 @@ function InviteMaker(props) {
     locationLink:
       "https://www.google.com/maps/search/?api=1&query=52.5111757%2C13.4167644&query_place_id=ChIJhdBrMiVOqEcRx0BtYoomxt8",
     eventDescription:
-      "Hello everyone:) I would like to invite you to my birtday party! Bring some beer and let's get wild!!",
+      "Hello everyone:) I would like to invite you to my birthday party! Bring some beer and let's get wild!!",
   });
 
   function changeInputData(event) {
@@ -29,7 +29,7 @@ function InviteMaker(props) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 py-40">
+    <div className="grid grid-cols-1 md:grid-cols-2 py-40" id="inviteMaker">
       <InputArea onInputChange={changeInputData} defaultInput={inputData} />
       <Result listOfTemplates={props.listOfTemplates} inputData={inputData} />
     </div>

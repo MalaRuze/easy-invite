@@ -1,22 +1,30 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 function NavItems(props) {
   return (
     <>
-      <a
+      <Link
         onClick={() => props.isMobile && props.closeMobileMenu()}
-        href="#"
-        className="hover:text-easyPurple transition duration-200"
+        to="inviteMaker"
+        spy={true}
+        duration={500}
+        smooth={true}
+        offset={-200}
+        className="hover:text-easyPurple transition duration-200 cursor-pointer"
+      >
+        Create Invite
+      </Link>
+      <Link
+        onClick={() => props.isMobile && props.closeMobileMenu()}
+        to="about"
+        spy={true}
+        duration={1000}
+        smooth={true}
+        className="hover:text-easyPurple transition duration-200 cursor-pointer"
       >
         About
-      </a>
-      <a
-        onClick={() => props.isMobile && props.closeMobileMenu()}
-        href="#"
-        className="hover:text-easyPurple transition duration-200"
-      >
-        Contact
-      </a>
+      </Link>
     </>
   );
 }

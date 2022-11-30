@@ -46,17 +46,19 @@ function Contact() {
 
   return (
     <div className="col-start-2 pb-16">
-      <h2 className="pt-24 text-3xl md:text-4xl pb-6">Contact me</h2>
+      <h2 className="pt-24 text-2xl md:text-3xl pb-6">Contact me</h2>
       <p className="my-auto">
         Suggestion, feature request or job offer? ... hit me up:)
       </p>
       <div className="flex flex-row justify-between h-6 text-easyPurple w-40 mt-8">
         <button
+          className="hover:opacity-80 duration-200"
           onClick={() => (window.location = "mailto:vojtech.ruzic@gmail.com")}
         >
           {mailIcon}
         </button>
         <button
+          className="hover:opacity-80 duration-200"
           onClick={() =>
             window.open("https://www.linkedin.com/in/vojtech-ruzicka", "_blank")
           }
@@ -64,6 +66,7 @@ function Contact() {
           {linkedinIcon}
         </button>
         <button
+          className="hover:opacity-80 duration-200"
           onClick={() => window.open("https://github.com/MalaRuze", "_blank")}
         >
           {githubIcon}

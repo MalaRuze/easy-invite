@@ -14,7 +14,7 @@ module.exports = {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       height: {
-        screen75: "85vh",
+        screen75: "80vh",
       },
       maxWidth: {
         custom: "65%",

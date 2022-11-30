@@ -34,7 +34,7 @@ function LocationInput(props) {
     const locationLink = {
       target: {
         name: "locationLink",
-        value: adressLink,
+        value: googleMapLink,
       },
     };
     const finalData = [locationName, locationLink];
