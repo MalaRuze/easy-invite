@@ -109,7 +109,7 @@ function Result(props) {
 
   return (
     <div className="pl-0 md:pl-20">
-      <h2 className="text-2xl pb-8 font-medium pt-10 md:pt-0">
+      <h2 className="text-2xl pb-6 font-medium pt-10 md:pt-0">
         Your Invite Message
       </h2>
       <h3 className="text-center pb-1">{templateNames[currentTemplate]}</h3>

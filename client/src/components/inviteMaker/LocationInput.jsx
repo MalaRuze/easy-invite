@@ -98,7 +98,7 @@ function LocationInput(props) {
         </PlacesAutocomplete>
       </div>
       <div>
-        <p className="pb-2">Map Link</p>
+        <p className="pb-2 break-keep">Link</p>
         <Switch
           className="bg-easyGrey align-middle"
           checked={includeLink}

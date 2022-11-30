@@ -3,6 +3,9 @@ import Axios from "axios";
 import Navbar from "./navbar/Navbar.jsx";
 import WelcomeScreen from "./welcomeScreen/WelcomeScreen";
 import InviteMaker from "./inviteMaker/InviteMaker.jsx";
+import About from "./about/About.jsx";
+import Contact from "./contact/Contact.jsx";
+import Footer from "./footer/Footer.jsx";
 
 function App() {
   const [listOfTemplates, setListOfTemplates] = useState([]);
@@ -13,22 +16,14 @@ function App() {
     });
   }, []);
 
-  ///////////////////mapping the fetched data script///////////////////////////////////
-  // {listOfTemplates.map((template, index) => {
-  //   return (
-  //     <div key={index}>
-  //       <h1>{template.heading}</h1>
-  //       <h1>{template.location}</h1>
-  //       <h1>{template.date}</h1>
-  //     </div>
-  //   );
-  // })}
-
   return (
     <div className="max-w-screen-2xl mx-auto px-1 xs:px-8">
       <Navbar />
       <WelcomeScreen />
       <InviteMaker listOfTemplates={listOfTemplates} />
+      <About />
+      <Contact />
+      <Footer />
     </div>
   );
 }
