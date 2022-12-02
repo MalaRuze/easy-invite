@@ -10,7 +10,7 @@ function NavItems(props) {
         spy={true}
         duration={500}
         smooth={true}
-        offset={-200}
+        offset={props.isMobile ? 100 : -200}
         className="hover:text-easyPurple transition duration-200 cursor-pointer"
       >
         Create Invite

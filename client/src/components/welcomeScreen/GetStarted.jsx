@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { isMobile } from "react-device-detect";
 
 function GetStarted() {
   const downArrowIcon = (
@@ -27,7 +28,7 @@ function GetStarted() {
         spy={true}
         duration={500}
         smooth={true}
-        offset={-200}
+        offset={isMobile ? 100 : -200}
       >
         Get Started
         {downArrowIcon}
