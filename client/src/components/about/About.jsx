@@ -100,7 +100,7 @@ function About() {
         <img
           src={require("./myPicture.jpg")}
           alt="my_photo"
-          className="md:hidden sm:w-6/12 w-8/12 rounded-xl mx-auto mb-14"
+          className="md:hidden sm:w-6/12 w-8/12 rounded-xl mx-auto mb-16 md:mb-14"
         ></img>
         <div className="flex flex-col justify-around h-2/6 md:h-4/6 md:justify-between">
           <p className="pb-8">
