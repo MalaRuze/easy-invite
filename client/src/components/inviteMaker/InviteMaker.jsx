@@ -13,7 +13,7 @@ function InviteMaker(props) {
     locationName: "Südpol, Süderstraße, Hamburg, Germany",
     useLocationLink: true,
     locationLink:
-      "https://www.google.com/maps/search/?api=1&query=52.5111757%2C13.4167644&query_place_id=ChIJhdBrMiVOqEcRx0BtYoomxt8",
+      "https://www.google.com/maps/search/?api=1&query=53.5456648%2C10.0327334&query_place_id=ChIJF2-VXJKOsUcR3LuIVxtClSI",
     eventDescription:
       "Hello everyone:) I would like to invite you to my birthday party! Bring some beer and let's get wild!!",
   });
