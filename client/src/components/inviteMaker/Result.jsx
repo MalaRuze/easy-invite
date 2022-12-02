@@ -93,18 +93,8 @@ function Result(props) {
 
   const templateNames = templatesData.map((template) => [template.name]);
 
-  console.log(templatesData);
-
-  function changeCurrentTemplateNext() {
-    currentTemplate + 1 === templatesData.length
-      ? setCurrentTemplate(0)
-      : setCurrentTemplate(currentTemplate + 1);
-  }
-
-  function changeCurrentTemplatePrev() {
-    currentTemplate === 0
-      ? setCurrentTemplate(templatesData.length - 1)
-      : setCurrentTemplate(currentTemplate - 1);
+  function handleCarouselChange(currentSlide) {
+    setCurrentTemplate(currentSlide);
   }
 
   return (
@@ -118,13 +108,16 @@ function Result(props) {
           className="m-auto hover:text-easyPurple transition duration-200"
           onClick={() => {
             ref.current.prev();
-            changeCurrentTemplatePrev();
           }}
         >
           {arrowLeft}
         </div>
         <div className="col-span-8 p-2 bg-easyGrey rounded-lg">
-          <Carousel className="h-96" ref={ref}>
+          <Carousel
+            className="h-96"
+            ref={ref}
+            afterChange={(current) => handleCarouselChange(current)}
+          >
             {combinedTemplate}
           </Carousel>
         </div>
@@ -132,8 +125,6 @@ function Result(props) {
           className="m-auto hover:text-easyPurple transition duration-200"
           onClick={() => {
             ref.current.next();
-            console.log(ref.current);
-            changeCurrentTemplateNext();
           }}
         >
           {arrowRight}

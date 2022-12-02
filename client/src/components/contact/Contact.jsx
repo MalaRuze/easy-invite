@@ -18,9 +18,9 @@ function Contact() {
   const githubIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      shape-rendering="geometricPrecision"
-      text-rendering="geometricPrecision"
-      image-rendering="optimizeQuality"
+      shapeRendering="geometricPrecision"
+      textRendering="geometricPrecision"
+      imageRendering="optimizeQuality"
       viewBox="0 0 640 640"
       stroke="currentColor"
       fill="currentColor"
@@ -32,9 +32,9 @@ function Contact() {
   const linkedinIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      shape-rendering="geometricPrecision"
-      text-rendering="geometricPrecision"
-      image-rendering="optimizeQuality"
+      shapeRendering="geometricPrecision"
+      textRendering="geometricPrecision"
+      imageRendering="optimizeQuality"
       viewBox="0 0 640 640"
       stroke="currentColor"
       fill="currentColor"

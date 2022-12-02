@@ -15,13 +15,6 @@ function DateTimeInput(props) {
       : props.defaultInput.endTime;
 
   function handleChange(datetime, datetimeString) {
-    // const name = event.target.getAttribbute("name");
-    // const value = this.state.date;
-    // props.name
-    // const name = dayjs(datetimeString).isValid()
-    //   ? props.name + "Date"
-    //   : props.name + "Time";
-
     const name =
       datetimeString.length > 5 ? props.name + "Date" : props.name + "Time";
     const datetimeData = [
@@ -33,10 +26,6 @@ function DateTimeInput(props) {
       },
     ];
     props.handleChange(datetimeData);
-
-    // console.log(name);
-    // console.log(datetime);
-    // console.log(datetimeString);
   }
 
   return (

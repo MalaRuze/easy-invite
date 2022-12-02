@@ -39,8 +39,6 @@ function LocationInput(props) {
     };
     const finalData = [locationName, locationLink];
     props.handleChange(finalData);
-    // props.handleChange(locationLink);
-    // props.handleChange(locationName);
   };
 
   function handleToggle() {
@@ -78,9 +76,10 @@ function LocationInput(props) {
                 })}
               />
               <div className="absolute bg-white z-20 w-full px-4 rounded drop-shadow-md">
-                {suggestions.map((suggestion) => {
+                {suggestions.map((suggestion, index) => {
                   return (
                     <div
+                      key={index}
                       className="pb-2 pt-1 text-sm hover:text-easyPurple"
                       {...getSuggestionItemProps(suggestion)}
                     >

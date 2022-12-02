@@ -23,9 +23,7 @@ function InviteMaker(props) {
     event.forEach((event) => {
       updatedData[event.target.name] = event.target.value;
     });
-    console.log(updatedData);
     setInputData({ ...inputData, ...updatedData });
-    console.log(inputData);
   }
 
   return (
