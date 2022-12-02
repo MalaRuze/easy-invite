@@ -11,7 +11,7 @@ function App() {
   const [listOfTemplates, setListOfTemplates] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://easyinvite-api.onrender.com//getTemplates").then(
+    Axios.get("https://easyinvite-api.onrender.com/getTemplates").then(
       (response) => {
         setListOfTemplates(response.data);
       }
