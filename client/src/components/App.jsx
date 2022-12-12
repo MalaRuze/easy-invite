@@ -10,8 +10,9 @@ import Footer from "./footer/Footer.jsx";
 function App() {
   const [listOfTemplates, setListOfTemplates] = useState([]);
 
+  // "https://easyinvite-api.onrender.com/getTemplates"
   useEffect(() => {
-    Axios.get("https://easyinvite-api.onrender.com/getTemplates").then(
+    Axios.get("fancy-brioche-7e61f0.netlify.app/getTemplates").then(
       (response) => {
         setListOfTemplates(response.data);
       }
