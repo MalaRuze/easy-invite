@@ -12,7 +12,7 @@ function App() {
 
   // "https://easyinvite-api.onrender.com/getTemplates"
   useEffect(() => {
-    Axios.get("https://fancy-brioche-7e61f0.netlify.app/getTemplates").then(
+    Axios.get("https://easyinvite-api.onrender.com/getTemplates").then(
       (response) => {
         setListOfTemplates(response.data);
       }
