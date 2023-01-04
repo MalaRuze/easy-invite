@@ -102,7 +102,7 @@ function Result(props) {
         <h2 className="animate-pulse  mt-40">Please wait ...</h2>
         <p className="text-sm">
           webservice free plan limitation - launching servers <br />
-          (this may take up to 20 sec)
+          (this may take up to 30 sec)
         </p>
       </div>
     );
