@@ -55,7 +55,6 @@ function Result(props) {
 
   const inputData = props.inputData;
   const [currentTemplate, setCurrentTemplate] = useState(0);
-
   const combinedTemplate = templatesData.map((template, index) => {
     return (
       <textarea
@@ -95,6 +94,18 @@ function Result(props) {
 
   function handleCarouselChange(currentSlide) {
     setCurrentTemplate(currentSlide);
+  }
+
+  if (templatesData.length === 0) {
+    return (
+      <div className="h-96 text-center">
+        <h2 className="animate-pulse  mt-40">Please wait ...</h2>
+        <p className="text-sm">
+          webservice free plan limitation - launching servers <br />
+          (this may take up to 20 sec)
+        </p>
+      </div>
+    );
   }
 
   return (
