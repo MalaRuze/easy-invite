@@ -7,6 +7,3 @@ The client was created using React and Tailwindcss. There is also an integration
 Easyinvite is now running on the Render platform:
 
 https://easyinvite.onrender.com/
-
-
-Google Maps JavaScript API changed recently required URL Parameters. Loading the Google Maps JavaScript API without a callback is not supported anymore. This issue is being solved.
